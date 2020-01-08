@@ -27,7 +27,7 @@
 	<!-- One -->
 	<section id="one" class="wrapper">
 		<div class="inner flex flex-3">
-			<div class="flex-item left">
+			<div class="inner flex flex-item">
 				<div>
 					<div class="img fit" >
 						<iframe src="https://drive.google.com/file/d/1_7CGScW7bzhAWZa0i8nRgHSad72nXf3z/preview"></iframe>
