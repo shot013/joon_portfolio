@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.joon.profile.persistance.userMapper">
+	<insert id="regUser">
+		<![CDATA[
+			INSERT INTO USER_INFO
+					( user_id,  user_pw,  user_name,  user_email,  user_phone)
+			VALUES 	(#{user_id}, #{user_pw}, #{user_name}, #{user_email}, #{user_phone})
+		]]>
+	</insert>
+	
+	<select id="chkId" parameterType="String" resultType="String">
+		<![CDATA[
+			SELECT 	COUNT(user_id)	AS CNT
+			FROM	USER_INFO
+			WHERE	user_id = #{userId}
+		]]>
+	</select>
+	
+	<select id="loginUser" resultType="int">
+		<![CDATA[
+			SELECT 	COUNT(user_id)	AS CNT
+			FROM	USER_INFO
+			WHERE	user_id = #{user_id}
+				AND	user_pw = #{user_pw}
+		]]>
+	</select>
+
+</mapper>

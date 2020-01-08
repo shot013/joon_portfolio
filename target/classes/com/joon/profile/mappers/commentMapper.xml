@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.joon.profile.persistance.commentMapper">
+	<insert id="regComment">
+		<![CDATA[
+			INSERT INTO `USER_COMMENT` 
+					(`msg`, `reg_date`						  ,  `user_id`,  `board_number`) 
+			VALUES (#{msg}, DATE_FORMAT(now(), '%Y%m%d%h%m%s'), #{user_id}, #{board_number});
+		]]>
+		<selectKey keyProperty="comment_number" resultType="int">
+	    	SELECT LAST_INSERT_ID()
+	    </selectKey>
+	</insert>
+	
+	<select id="commentList" parameterType="com.joon.profile.dao.commentDAO" resultType="com.joon.profile.dao.commentDAO">
+		SELECT 	comment_number,
+				msg,
+				DATE_FORMAT(reg_date, '%y/%m/%d %h:%m') AS reg_date,
+		        user_id,
+		        board_number
+		FROM	USER_COMMENT
+		WHERE	board_number = #{board_number}
+		ORDER BY reg_date
+	</select>
+	
+	<delete id="delComment">
+		<![CDATA[
+			DELETE
+			FROM 	USER_COMMENT
+			WHERE	board_number 	= #{board_number}
+				AND	user_id		 	= #{user_id}
+				AND	comment_number	= #{comment_number}
+		]]>
+	</delete>
+</mapper>

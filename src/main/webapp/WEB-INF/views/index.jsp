@@ -35,7 +35,7 @@
 					<h3 class="main_portfolio_title">현재 포트폴리오 홈페이지</h3>
 					<p class="main_portfolio_title">현재  AWS에 올린 상태입니다.</p>
 					<p>
-						<a target="_blank" href="https://github.com/shot013/CloudKitchen">GitHub 보시려면 클릭해주세요</a>
+						<a target="_blank" href="https://github.com/shot013/joon_portfolio">GitHub 보시려면 클릭해주세요</a>
 					</p>
 				</div>
 				<div>

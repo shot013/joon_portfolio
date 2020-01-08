@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.joon.profile.persistance.boardMapper">
+	<insert id="regBoard">
+		<![CDATA[
+			INSERT 
+			INTO 
+			USER_BOARD	( `title`,  `msg`, 			`reg_date`, 				 `user_id`) 
+			VALUES 		(#{title}, #{msg}, DATE_FORMAT(now(), '%Y%m%d%h%m%s'),  #{user_id});
+		]]>
+	</insert>
+	
+	<select id="searchBoard" parameterType="java.util.Map" resultType="com.joon.profile.dao.boardDAO">
+		<![CDATA[
+			SELECT	board_number,
+					title,
+			        msg,
+			        DATE_FORMAT(reg_date, '%y/%m/%d %h:%m') AS reg_date,
+			        user_id
+			FROM 	USER_BOARD
+			${search_keyword}
+		]]>
+	</select>
+	
+	<select id="readBoard" parameterType="com.joon.profile.dao.boardDAO" resultType="com.joon.profile.dao.boardDAO">
+		<![CDATA[
+			SELECT 	board_number,
+					title,
+					msg,
+					DATE_FORMAT(reg_date, '%y/%m/%d %h:%m') AS reg_date,
+					user_id
+			FROM	USER_BOARD
+			WHERE	board_number = ${board_number}
+		]]>
+	</select>
+	
+	<select id="boardList" parameterType="com.joon.profile.dao.boardDAO" resultType="com.joon.profile.dao.boardDAO">
+		<![CDATA[
+			SELECT 	board_number,
+					title,
+					msg,
+					DATE_FORMAT(reg_date, '%y/%m/%d %h:%m') AS reg_date,
+					user_id
+			FROM	USER_BOARD
+			ORDER BY board_number DESC
+			LIMIT	#{page}, 5
+		]]>
+	</select>
+	
+	<select id="regCnt" resultType="int">
+		<![CDATA[
+			SELECT 	COUNT(board_number) AS CNT
+			FROM	USER_BOARD
+		]]>
+	</select>
+	
+	<update id="updBoard">
+		<![CDATA[
+			UPDATE 	USER_BOARD 
+			SET 	title 		 = #{title}
+				,	msg 		 = #{msg}
+			WHERE	board_number = #{board_number}
+				AND	user_id		 = #{user_id}
+		]]>
+	
+	</update>
+	
+	<delete id="delBoard">
+		<![CDATA[
+			DELETE
+			FROM 	USER_BOARD
+			WHERE	board_number = #{board_number}
+				AND	user_id		 = #{user_id}
+		]]>
+	</delete>
+</mapper>
