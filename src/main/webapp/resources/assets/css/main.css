@@ -9,6 +9,7 @@
 */
 
 /* Reset */
+	.click_up:hover { cursor:pointer }
 	a { text-decoration:none !important; color:#25a2c3; } 
 	a:hover { cursor:pointer }
 	.page { padding : 0 1.5em !important; }

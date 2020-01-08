@@ -9,7 +9,7 @@
 <body>
 	<footer id="footer">
 		<div class="inner">
-			<h2 onclick="window.scrollTo(0,0);">클릭하면 위로갑니다!</h2>
+			<h2 class="click_up" onclick="window.scrollTo(0,0);">클릭하면 위로갑니다!</h2>
 			<ul class="actions">
 				<li><span class="icon fa-phone"></span> 010-7676-5322</li>
 				<li><span class="icon fa-envelope"></span> dnjstlrdlf@gmail.com</li>

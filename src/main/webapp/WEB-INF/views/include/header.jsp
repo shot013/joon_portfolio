@@ -15,7 +15,7 @@
 		</nav>
 		<a href="./" class="logo">Joon's PortFolio</a>
 		<nav class="right">
-			<a href="#" class="button alt">로그인</a>
+			<a href="./login" class="button alt">로그인</a>
 		</nav>
 	</header>
 </body>

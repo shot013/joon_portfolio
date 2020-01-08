@@ -9,7 +9,6 @@
 	swal('로그인 후 이용해주세요.');
 	$(function(){
 		$('.swal-button').on('click', function() {
-			// location.href='/JoonProfile'
 			location.href='login'
 		});
 	});

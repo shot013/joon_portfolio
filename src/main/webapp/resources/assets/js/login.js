@@ -22,8 +22,7 @@ function loginBtn() {
 		sessionStorage.setItem('user_id', $user_id);
 		swal($user_id + "님 로그인 되었습니다.");
 		$('.swal-button').on('click', function(){
-//			location.href='../JoonProfile';
-			location.href='../profile';
+			location.href='./';
 		});
 	} else {
 		swal("아이디와 비밀번호를 확인해주세요.");
