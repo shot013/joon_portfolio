@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,15 @@
 		</nav>
 		<a href="./" class="logo">Joon's PortFolio</a>
 		<nav class="right">
-			<a href="./login" class="button alt">로그인</a>
+			<c:choose>
+			    <c:when test="${user_id eq '' || user_id eq null || empty user_id}">
+			       	<li style="list-style:none;"><a href="./login" class="button alt">로그인</a></li>
+			    </c:when>
+			    <c:otherwise>
+			        <li><a href="./logout/logoutUser">로그아웃</a></li>
+			    </c:otherwise>
+			</c:choose>
+			
 		</nav>
 	</header>
 </body>
