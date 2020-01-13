@@ -32,11 +32,11 @@
 					<div class="img fit" >
 						<iframe src="">현재 작업중!</iframe>
 					</div>
-					<h3 class="main_portfolio_title">node.js 게시판페이지입니다.</h3>
+					<h3 class="main_portfolio_title">node.js 페이지입니다.</h3>
 					<p class="main_portfolio_title">현재  작업중인 상태입니다.</p>
-					<p class="main_portfolio_title">작업중</p>
+					<p class="main_portfolio_title">작업중!</p>
 					<p>
-						<a target="_blank" href="">GitHub 보시려면 클릭해주세요</a>
+						<a target="_blank" href="https://github.com/shot013/joon_portfolio_node">GitHub 보시려면 클릭해주세요</a>
 					</p>
 				</div>
 			</div>
